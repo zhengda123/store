@@ -21,6 +21,7 @@ export default {
   },
   computed:{
       isActive(){
+          //判断当前路由的path是否与取到path的值一致
           return this.$route.path.indexOf(this.path) !==-1
       },
       textColor(){
@@ -40,6 +41,7 @@ export default {
   methods: {
     skip() {
       //   this.$router.push(this.path);
+      //解决多次点击同一个路由，控制台会报错问题
       if (this.$route.path !== this.path) {
         this.$router.push({ path: this.path });
       }
