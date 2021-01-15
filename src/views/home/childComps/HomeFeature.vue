@@ -1,8 +1,8 @@
 <template>
   <div class="feature">
-    <a href="javascript:void(0);">
+   
       <img src="~assets/img/home/recommend_bg.png" alt="" />
-    </a>
+   
   </div>
 </template>
 <script>

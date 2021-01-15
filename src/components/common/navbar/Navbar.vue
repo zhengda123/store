@@ -21,11 +21,11 @@ export default {
   height: 44px;
   line-height: 44px;
 
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, .3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, .1);
   text-align: center;
   display: flex;
     .navbar-center{
-        width: 75%;
+        width: 65%;
     }
     .navbar-left,.navbar-right{
         flex: 1;
