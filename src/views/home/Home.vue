@@ -34,7 +34,7 @@
 </template>
 <script>
 import Navbar from "components/common/navbar/Navbar";
-import Scroll from "components/common/scroll/Scroll";
+import Scroll from "components/common/scroll/Scroll"; 
 
 import TabControl from "components/content/tabControl/TabControl";
 import GoodsList from "components/content/goods/GoodsList";
@@ -73,7 +73,8 @@ export default {
       isShow: false,
       offsetTop: 0,
       isFixed: false,
-      saveY:0
+      saveY:0,
+      
     };
   },
   created() {
@@ -86,12 +87,10 @@ export default {
     // 防抖函数使用，判断商品图片在200毫秒内是否有下一张图片要刷新，如果有就不刷新
     const refresh = debounce(this.$refs.scroll.refresh, 200);
     // 商品图片加载后刷新一下scroll
+ 
     this.$bus.$on("loadGoodsImg", () => {
-      refresh();
-    });
-  },
-  destroyed(){
-    console.log("211111")
+      refresh()
+      });
   },
   activated(){
     this.$refs.scroll.refresh()
@@ -101,11 +100,13 @@ export default {
   deactivated(){
     // 存储离开路由时滚动的高度
     this.saveY = this.$refs.scroll.getScrollY()
+    // 取消全局事件的监听
+    // this.$bus.$off("loadGoodsImg",this.itemImgListener)
   },
   methods: {
     swiperLoad() {
       this.offsetTop = this.$refs.tabControl2.$el.offsetTop;
-       console.log(this.offsetTop)
+     
     },
     // 请求轮播图数据和推荐商品数据
     getHomeMultidata() {

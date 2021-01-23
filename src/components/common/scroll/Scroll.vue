@@ -47,7 +47,6 @@ export default {
     },
     refresh(){
        this.scroll && this.scroll.refresh();
-      //  console.log("11111111")
     },
     finishPullUp(){
       this.scroll && this.scroll.finishPullUp();
